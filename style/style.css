@@ -15,6 +15,8 @@ header {
 nav {
     padding-right: 10px;
     display: flex;
+    justify-content: space-between; 
+    align-items: center; 
     
 }
 
@@ -57,6 +59,14 @@ nav > ul > li > a {
 nav > ul > li:hover > a {
    color: white;
    
+}
+
+
+
+.fa-bars {
+    font-size: 1.5rem; 
+    
+    opacity: 0;
 }
 
 .hero-container {
@@ -345,11 +355,44 @@ footer {
 }
 @media (max-width: 480px) {
     
-    nav > aside {
-        opacity: 0;
+    nav > ul {
+        display: none; 
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        background-color: white;
+        width: 100%;
+        flex-flow: column;
+        padding: 10px 0;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
     }
 
+    nav > ul.show-menu {
+        display: flex; 
+    }
+
+    nav > ul > li {
+        width: 100%; 
+        text-align: center;
+    }
+
+    nav > ul > li:hover {
+        background-color: white;
+        box-shadow: none;
+    }
+
+    nav > ul > li:hover > a {
+        color: black;
+    }
+
+    .fa-bars {
+        margin-right: 10px; 
+        cursor: pointer;
+        opacity: 1;
+    }
 }
+
 
 @media(prefers-reduce-motion) {
     .hidden {
