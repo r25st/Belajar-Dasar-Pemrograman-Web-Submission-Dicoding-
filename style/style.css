@@ -329,3 +329,11 @@ footer {
     }
 
 }
+
+@media (max-width: 480px) {
+    
+    nav > aside {
+        opacity: 0;
+    }
+
+}
