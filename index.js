@@ -23,3 +23,14 @@ const hiddenElement = document.querySelectorAll('.hidden');
 
 hiddenElement.forEach((el) => observer.observe(el));
 
+//memulai fungsi ketika konten dom sudah berhasil dimasukkan
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.querySelector('.fa-bars');
+    const navMenu = document.querySelector('nav ul');
+
+    // memberi kelas showmenu kedalam <ul> yang berada di <nav> saat menekan kelas fa-bars
+    //agak berbelit maaf
+    menuIcon.addEventListener('click', function() {
+        navMenu.classList.toggle('show-menu');
+    });
+});
