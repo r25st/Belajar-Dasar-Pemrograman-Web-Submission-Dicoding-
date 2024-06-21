@@ -3,12 +3,11 @@ body {
     font-optical-sizing: auto;
 }
 
-
 header {
     position: sticky;
     top: 0; 
     padding: 10px;
-    z-index: 1000;
+    z-index: 2;
     background-color: white;
 }
 
@@ -60,8 +59,6 @@ nav > ul > li:hover > a {
    color: white;
    
 }
-
-
 
 .fa-bars {
     font-size: 1.5rem; 
@@ -208,8 +205,8 @@ span {
 
 
 .kerangka_container > ol {
- display: flex;
- flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 
 }
 
@@ -266,6 +263,62 @@ span {
 }
 
 
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+.slide {
+    overflow: hidden;
+    margin: 20px 5px 0 0;
+    padding: 10px 0;
+    background-color: #0e0d0d;
+    white-space: nowrap;
+    position: relative;
+}
+
+.slide:after,
+.slide:before {
+    position: absolute;
+    top: 0;
+    width: 20vw;
+    height: 100%;
+    content: "";
+    z-index: 1;
+}
+
+.slide:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0), white);
+    
+}
+
+
+.slide:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), white);
+
+}
+
+.img-slide {
+    animation: 50s slide infinite linear;
+    display: inline-block;
+}
+
+.img-slide img {
+    height: 100px;
+    margin: 0px 50px;
+}
+
+.slide:hover .img-slide{
+    animation-play-state: paused;
+}
+
 footer {
     font-family: "Playwrite ES", cursive;
     font-optical-sizing: auto;
@@ -294,7 +347,6 @@ footer {
 .footer-content p {
     margin: 0;
 }
-
 
 .hidden {
     opacity: 0;
@@ -325,6 +377,7 @@ footer {
 
     }    
 }
+
 @media (max-width: 1280px) {
     
     .hero-container > div {
@@ -344,6 +397,7 @@ footer {
     
     }
 }
+
 @media (max-width: 768px) {
 
     .hero-container > div {
@@ -361,6 +415,7 @@ footer {
     }
 
 }
+
 @media (max-width: 480px) {
     
     nav > ul {
@@ -370,7 +425,7 @@ footer {
         left: 0;
         background-color: white;
         width: 100%;
-        flex-flow: column-reverse;
+        flex-flow:column-reverse;
         padding: 10px 0;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
@@ -401,7 +456,6 @@ footer {
     }
 
 }
-
 
 @media(prefers-reduce-motion) {
     .hidden {
